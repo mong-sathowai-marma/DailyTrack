@@ -1,0 +1,55 @@
+* { box-sizing: border-box; }
+body { font-family: Inter, system-ui, sans-serif; }
+.habit-check {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 21px;
+  height: 21px;
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.habit-check:checked {
+  background: #4f46e5;
+  border-color: #4f46e5;
+}
+.habit-check:checked::after {
+  content: "✓";
+  display: block;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 17px;
+}
+.habit-check:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.day-dot {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  font-size: 11px;
+}
+.day-dot.done {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: white;
+}
+.modal-backdrop {
+  background: rgb(15 23 42 / 55%);
+  backdrop-filter: blur(4px);
+}
+.toast {
+  animation: appear .2s ease-out;
+}
+@keyframes appear {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
